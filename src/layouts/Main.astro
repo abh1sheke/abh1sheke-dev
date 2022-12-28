@@ -1,0 +1,52 @@
+---
+import "../base.css";
+import Navlink from "../lib/components/Navlink.astro";
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="min-h-screen bg-gradient-to-t from-ocean-800 via-ocean-900 to-ocean-1000"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    /><link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/dc19eae1d2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body
+    class="scrollbar-thin scrollbar-thumb-ocean-800 scrollbar-thumb-rounded-md"
+  >
+    <main
+      class="relative min-h-screen bg-gradient-to-t from-ocean-800 via-ocean-900 to-ocean-1000"
+    >
+      <header
+        class="relative z-10 flex h-14 items-center justify-center sm:px-0 md:justify-end"
+      >
+        <ul class="flex justify-center font-inter">
+          <Navlink href="/">Home</Navlink>
+          <Navlink href="/blog">Blog</Navlink>
+          <Navlink href="/#projects">Projects</Navlink>
+          <Navlink>Socials</Navlink>
+        </ul>
+      </header>
+      <slot />
+    </main>
+  </body>
+</html>
