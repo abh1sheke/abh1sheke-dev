@@ -1,0 +1,27 @@
+---
+const { alt, src } = Astro.props;
+const name = alt.split(".")[0];
+---
+
+<tech-icon-container
+  class={`tech-stack-icon-${name} relative h-14 sm:h-16 `}
+  data-name={name}
+>
+  <img
+    class="h-full w-full cursor-pointer opacity-50 drop-shadow-md transition-all hover:animate-jiggle hover:opacity-100"
+    {src}
+    {alt}
+    format="png"
+    onmouseenter={}
+  />
+  <div
+    class={`tech-icon-tooltip-${name} hidden z-10 bg-ocean-1000 shadow-md text-ocean-100 px-2 py-[1px] font-semibold rounded absolute top-0 capitalize items-center justify-center`}
+  >
+    {name}
+  </div>
+</tech-icon-container>
+
+<script>
+  import { TechIconContainer } from "../helpers/techImage";
+  customElements.define("tech-icon-container", TechIconContainer);
+</script>

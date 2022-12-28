@@ -1,0 +1,19 @@
+---
+const { href } = Astro.props;
+const active = href === Astro.url.pathname ? true : false;
+---
+
+<li
+  class={`mx-4 sm:mx-8 text-lg transition-all ${
+    active
+      ? "font-semibold text-ocean-200 hover:text-ocean-400"
+      : "text-ocean-600 hover:text-ocean-500"
+  }`}
+>
+  <a href={href} class="py-2"><slot /></a>
+  {
+    active && (
+      <div class="active-page-highlight h-[1.5px] w-full animate-pageHighlight rounded bg-red-400" />
+    )
+  }
+</li>
