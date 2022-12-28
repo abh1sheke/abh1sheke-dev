@@ -1,8 +1,11 @@
 ---
 import Main from "../../layouts/Main.astro";
+
+const description =
+  "Hi, i'm Abhisheke Acharya, an aspiring Software Developer. Welcome to my Blog. Over here, I talk about tech, fitness and other little things I find interesting throughout the week.";
 ---
 
-<Main title="Blog">
+<Main title="Blog" description={description}>
   <div
     class="blog flex flex-col justify-center text-center font-inter text-ocean-200 drop-shadow-md"
   >

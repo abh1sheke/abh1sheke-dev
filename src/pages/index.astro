@@ -4,12 +4,15 @@ import Intro from "../lib/containers/Home/Intro.astro";
 import BlogPreview from "../lib/containers/Home/BlogPreview.astro";
 import Technologies from "../lib/containers/Home/Technologies.astro";
 import About from "../lib/containers/Home/About.astro";
+
+const description =
+  "Hi, i'm Abhisheke Acharya. I'm an aspiring Software Developer and this is my website.";
 ---
 
-<Main title="Home">
-  <div class="home flex flex-col px-2 sm:px-6 font-inter">
+<Main title="Home" description={description}>
+  <div class="home flex flex-col px-2 font-inter sm:px-6">
     <section
-      class="tech-n-blog h-auto mt-14 my-10 mb-20 items-center grid grid-cols-1 lg:grid-cols-3 w-5/6 md:w-3/4 lg:w-full mx-auto"
+      class="tech-n-blog my-10 mx-auto mt-14 mb-20 grid h-auto w-5/6 grid-cols-1 items-center md:w-3/4 lg:w-full lg:grid-cols-3"
     >
       <Intro />
       <BlogPreview />
