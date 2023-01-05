@@ -9,15 +9,19 @@ import TechImage from "../../components/TechImage.astro";
     Stuff that I work with
   </h3>
   <div
-    class="tech-stack-icons mx-auto my-8 grid w-[85%] grid-cols-4 place-content-center place-items-center justify-items-center gap-y-10 sm:w-3/4 md:w-2/3 lg:my-20"
+    class="tech-stack-icons mx-auto my-8 flex w-[85%] flex-col place-content-center justify-items-center sm:w-3/4 md:w-2/3 lg:my-20"
   >
-    <TechImage src="/images/ts.png" alt="typescript.png" />
-    <TechImage src="/images/svelte.png" alt="svelte.png" />
-    <TechImage src="/images/react.png" alt="react.png" />
-    <TechImage src="images/postgresnew.png" alt="postgres.png" />
-    <TechImage src="/images/nextjs.png" alt="nextjs.png" />
-    <TechImage src="/images/pythonnew.png" alt="python.png" />
-    <TechImage src="/images/nodenew.png" alt="node.png" aspectRatio="1.63" />
-    <TechImage src="images/djangonew.png" alt="django.png" />
+    <div class="mx-auto my-7 flex w-full md:w-3/4 justify-around">
+      <TechImage src="/images/ts.png" alt="typescript.png" />
+      <TechImage src="/images/svelte.png" alt="svelte.png" />
+      <TechImage src="/images/react.png" alt="react.png" />
+      <TechImage src="images/postgresnew.png" alt="postgres.png" />
+    </div>
+    <div class="mx-auto my-7 flex w-full md:w-3/4 justify-around">
+      <TechImage src="/images/nextjs.png" alt="nextjs.png" />
+      <TechImage src="/images/pythonnew.png" alt="python.png" />
+      <TechImage src="/images/nodenew.png" alt="node.png" aspectRatio="1.63" />
+      <TechImage src="images/djangonew.png" alt="django.png" />
+    </div>
   </div>
 </section>
