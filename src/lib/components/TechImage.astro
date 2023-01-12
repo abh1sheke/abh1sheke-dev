@@ -4,11 +4,11 @@ const name = alt.split(".")[0];
 ---
 
 <tech-icon-container
-  class={`tech-stack-icon-${name} relative h-14 sm:h-16 basis-1/4`}
+  class={`tech-stack-icon-${name} relative h-14 sm:h-16 basis-1/4 relative`}
   data-name={name}
 >
   <img
-    class="h-full w-full cursor-pointer object-contain opacity-50 drop-shadow-md transition-all hover:animate-jiggle hover:opacity-100"
+    class="h-full w-full cursor-pointer object-contain opacity-50 drop-shadow-md transition-all active:animate-jiggle hover:opacity-100"
     {src}
     {alt}
     format="png"
