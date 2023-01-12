@@ -19,6 +19,7 @@ module.exports = {
       },
       fontFamily: {
         inter: "'Inter', sans-serif;",
+        neutro: "'Neutro', sans-serif;",
       },
       animation: {
         pageHighlight: "active-page-hl 400ms ease-out 1 forwards",
