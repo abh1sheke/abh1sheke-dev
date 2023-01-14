@@ -2,8 +2,15 @@
 @tailwind utilities;
 @tailwind components;
 
+@font-face {
+  font-family: "Neutro";
+  src: url("/fonts/Neutro-Bold.ttf") format("ttf");
+  font-weight: "bold";
+}
+
 html,
 body {
+  font-family: "Neutro-Bold";
   min-height: 100vh;
   padding: 0;
   margin: 0;
