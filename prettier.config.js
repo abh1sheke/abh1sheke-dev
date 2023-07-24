@@ -7,7 +7,20 @@ const config = {
   semi: true,
   trailingComma: "all",
   tabWidth: 2,
-  plugins: [require.resolve("prettier-plugin-tailwindcss")],
+  plugins: [
+    require.resolve(
+      "prettier-plugin-tailwindcss",
+      require.resolve("prettier-plugin-astro"),
+    ),
+  ],
+  overrides: [
+    {
+      files: "*.astro",
+      options: {
+        parser: "astro",
+      },
+    },
+  ],
 };
 
 export default config;
