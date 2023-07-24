@@ -2,11 +2,41 @@
 import Navlink from "./Navlink.astro";
 ---
 
-<header class="w-full h-16 p-3 flex justify-between">
+<header
+    id="header"
+    data-state="hide"
+    class="w-full h-14 fixed z-10 p-3 flex justify-between items-center backdrop-blur-sm transition-colors duration-250 delay-100"
+>
     <div></div>
-    <ul class="flex">
+    <ul class="flex items-center data-[show=true]:opacity-1">
         <Navlink href="/">home</Navlink>
         <Navlink href="/blog">blog</Navlink>
         <Navlink href="/#trinkets">trinkets</Navlink>
     </ul>
 </header>
+
+<style>
+    header[data-state="show"] {
+        @apply bg-dark-900/40;
+    }
+    header[data-state="hide"] {
+        @apply bg-dark-900/0;
+    }
+</style>
+
+<script lang="ts">
+    let navbar = document.getElementById("header");
+    document.addEventListener("scroll", (_) => {
+        let scrollOffset = window.scrollY > 0;
+        switch (scrollOffset) {
+            case true: {
+                navbar.dataset.state = "show";
+                break;
+            }
+            case false: {
+                navbar.dataset.state = "hide";
+                break;
+            }
+        }
+    });
+</script>
