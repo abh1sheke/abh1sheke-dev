@@ -28,7 +28,7 @@
 </script>
 
 <h2
-    class="overflow-hidden text-3xl font-extrabold inline-block text-blaze-300 italic"
+    class="text-2xl sm:text-3xl font-extrabold inline-block text-blaze-300 italic"
 >
     {#if current === "en"}
         <GreetingSpan>Hello there!</GreetingSpan>
