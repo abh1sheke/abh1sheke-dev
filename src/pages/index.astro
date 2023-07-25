@@ -1,5 +1,6 @@
 ---
 import RootLayout from "../layouts/RootLayout.astro";
+import Greeting from "../lib/components/Greeting/Greeting.svelte";
 import Navbar from "../lib/components/Navbar.astro";
 ---
 
@@ -7,15 +8,10 @@ import Navbar from "../lib/components/Navbar.astro";
     <Navbar />
     <main class="min-h-[1000px] bg-dark-800 pt-16">
         <div class="mx-auto text-cool-100 w-[530px] pt-20">
-            <h2
-                id="greeting-text"
-                data-lang="en"
-                class="overflow-hidden text-3xl font-extrabold inline-block text-blaze-300 w-2/3"
-            >
-            </h2>
+            <Greeting client:load />
             <h1 class="inline-block font-semibold">
                 <span class="text-cool-400 text-3xl">I&apos;m</span>
-                <span class="text-5xl font-black ml-2">Abhisheke Acharya</span>
+                <span class="text-5xl font-black ml-2 text-gray-50">Abhisheke Acharya</span>
             </h1>
             <div class="mt-8 text-lg">
                 <p>
@@ -39,62 +35,3 @@ import Navbar from "../lib/components/Navbar.astro";
         </div>
     </main>
 </RootLayout>
-
-<style>
-    @keyframes greeting {
-        from {
-            width: 0;
-        }
-        to {
-            width: 92.4px;
-        }
-    }
-
-    @keyframes blinkTextCursor {
-        from {
-            border-right-color: rgba(255, 255, 255, 0.75);
-        }
-        to {
-            border-right-color: transparent;
-        }
-    }
-
-    .animate-greeting {
-        animation: greeting 2s steps(12) 1s 1 normal both,
-            blinkTextCursor 500ms steps(12) infinite normal;
-    }
-    a span[data-lang="ar"] {
-        direction: rtl;
-    }
-</style>
-
-<script lang="ts">
-    const greetings = [
-        { lang: "en", t: "Hello there" },
-        { lang: "jp", t: "こんにちは" },
-        { lang: "ar", t: "مرحبًا" },
-        { lang: "gr", t: "Guten tag" },
-        { lang: "tm", t: "வணக்கம்" },
-        { lang: "kr", t: "안녕하세요" },
-        { lang: "es", t: "Hola" },
-        { lang: "hi", t: "नमस्ते" },
-        { lang: "fr", t: "Bonjour" },
-        { lang: "ch", t: "你好" },
-    ];
-
-    function setGreeting(greetingData, i) {
-        setTimeout(() => {
-            const greeting = document.getElementById("greeting-text");
-            greeting.dataset.lang = greetingData.lang;
-            greeting.innerText = `${greetingData.t}!`;
-        }, 700 * i);
-    }
-
-    for (let i = 0; i <= greetings.length; i++) {
-        if (!greetings[i]) {
-            setGreeting(greetings[0], i);
-        } else {
-            setGreeting(greetings[i], i);
-        }
-    }
-</script>
