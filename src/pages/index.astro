@@ -6,30 +6,36 @@ import Navbar from "../lib/components/Navbar.astro";
 
 <RootLayout>
     <Navbar />
-    <main class="min-h-[1000px] bg-dark-800 pt-16">
-        <div class="mx-auto text-cool-100 w-[530px] pt-20">
+    <main class="min-h-screen bg-dark-800 pt-16">
+        <div
+            class="sm:block flex flex-col m-auto text-cool-100 w-[397px] sm:w-[530px] pt-20"
+        >
             <Greeting client:load />
             <h1 class="inline-block font-semibold">
-                <span class="text-cool-400 text-3xl">I&apos;m</span>
-                <span class="text-5xl font-black ml-2 text-gray-50">Abhisheke Acharya</span>
+                <span class="text-cool-400 text-2xl sm:text-3xl">I&apos;m</span>
+                <span class="text-4xl sm:text-5xl font-black ml-2 text-gray-100"
+                    >Abhisheke Acharya</span
+                >
             </h1>
-            <div class="mt-8 text-lg">
+            <div class="mt-8">
                 <p>
                     I'm a 20 year old Software Engineer. I enjoying making <span
                         class="font-extrabold text-cool-600">(</span
-                    ><span class="font-semibold italic"
+                    ><span class="font-semibold italic text-gray-200"
                         >and sometimes breaking</span
-                    ><span class="font-extrabold text-cool-600">)</span> software;
+                    ><span class="font-extrabold text-cool-600">)</span> software<span
+                        class="text-blaze-400">;</span
+                    >
                     especially cool little applications for the internet.
                 </p>
                 <p class="mt-4">
                     I also lift heavy circles, write <span
                         class="text-cool-600 font-extrabold">(</span
-                    ><span class="font-semibold">mediocre</span><span
-                        class="text-blaze-500 font-extrabold">*</span
-                    ><span class="text-cool-600 font-extrabold">)</span> blogs, listen
-                    to a ton of experimental music and read a bit of philosophy in
-                    my free time.
+                    ><span class="font-semibold text-gray-200">mediocre</span
+                    ><span class="text-blaze-500 font-extrabold">*</span><span
+                        class="text-cool-600 font-extrabold">)</span
+                    > blogs, listen to a ton of experimental music and read a bit
+                    of philosophy in my free time.
                 </p>
             </div>
         </div>
