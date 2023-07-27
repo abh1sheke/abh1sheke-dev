@@ -15,12 +15,12 @@ module.exports = {
   tailwindConfig: "./tailwind.config.cjs",
   overrides: [
     {
-      files: '*.astro',
-      options: { parser: 'astro' },
+      files: "*.astro",
+      options: { parser: "astro" },
     },
-    { 
-      files: '*.svelte', 
-      options: { parser: 'svelte' } 
-    }
-  ]
-}
+    {
+      files: "*.svelte",
+      options: { parser: "svelte" },
+    },
+  ],
+};
