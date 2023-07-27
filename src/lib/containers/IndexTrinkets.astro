@@ -1,5 +1,6 @@
 ---
 import IndexSection from "../components/IndexSection.astro";
+import TrinketCard from "../components/TrinketCard.astro";
 ---
 
 <IndexSection id="trinkets">
@@ -9,4 +10,25 @@ import IndexSection from "../components/IndexSection.astro";
       >built</span
     ><span class="italic text-blaze-400">*</span> recently.
   </p>
+  <div id="trinket-list" class="mt-5">
+    <section class="flex justify-evenly">
+      <TrinketCard href="http://github.com/abh1sheke/schlap">
+        <span slot="title">schlap</span><span slot="description"
+          >A secure messenger for the privacy focused individual.</span
+        >
+      </TrinketCard>
+      <TrinketCard href="http://github.com/abh1sheke/postx">
+        <span slot="title">postx</span><span slot="description"
+          >A cURL-like, multi-threaded app for API testing.</span
+        >
+      </TrinketCard>
+    </section>
+    <a
+      href="https://github.com/abh1sheke?tab=repositories"
+      target="_blank"
+      class="inline-flex items-center mt-2 font-semibold text-cool-300 border-b-2 border-b-blaze-500 hover:border-b-blaze-300 transition-all hover:text-gray-100 sm:text-base text-xs"
+    >
+      All my github repos <i class="fa-solid fa-arrow-right ml-1"></i>
+    </a>
+  </div>
 </IndexSection>
