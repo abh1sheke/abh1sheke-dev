@@ -1,0 +1,21 @@
+---
+import { getEntry } from "astro:content";
+import RootLayout from "../../layouts/RootLayout.astro";
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+const { slug } = Astro.params;
+if (slug === undefined) {
+  throw new Error("Slug is required");
+}
+const entry = await getEntry("blog-posts", slug);
+if (entry === undefined) {
+  return Astro.redirect("/404");
+}
+const { Content } = await entry.render();
+---
+
+<RootLayout title={entry.data.title + " | blog"}>
+  <BlogLayout>
+    <Content />
+  </BlogLayout>
+</RootLayout>
