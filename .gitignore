@@ -20,3 +20,6 @@ pnpm-debug.log*
 
 # vscode extension
 .vscode
+
+# astro types
+.astro

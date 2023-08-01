@@ -1,0 +1,36 @@
+---
+import IndexSection from "../components/IndexSection.astro";
+import BlogPreview from "../components/BlogPreview.astro";
+import { getCollection } from "astro:content";
+
+let posts = await getCollection("blog-posts");
+posts = posts.filter((p) => !p.data.draft);
+---
+
+<IndexSection>
+  <h1 class="text-2xl sm:text-3xl font-black text-gray-200">Blog</h1>
+  {
+    posts.length > 0 ? (
+      <>
+        <div class="flex flex-col">
+          {posts.map((p) => (
+            <BlogPreview
+              title={p.data.title}
+              readTime={p.data.readTime}
+              date={p.data.date}
+              href={"/blog/" + p.slug}
+            />
+          ))}
+        </div>
+        <a
+          href="/blog"
+          class="inline-flex items-center mt-2 font-semibold text-cool-300 border-b-2 border-b-blaze-500 hover:border-b-blaze-300 transition-all hover:text-gray-100 sm:text-base text-xs"
+        >
+          All posts <i class="fa-solid fa-arrow-right ml-1" />
+        </a>
+      </>
+    ) : (
+      <p class="sm:text-base text-sm">It seems to be quite empty here.</p>
+    )
+  }
+</IndexSection>
