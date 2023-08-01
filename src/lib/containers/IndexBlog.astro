@@ -3,8 +3,8 @@ import IndexSection from "../components/IndexSection.astro";
 import BlogPreview from "../components/BlogPreview.astro";
 import { getCollection } from "astro:content";
 
-const posts = await getCollection("blog-posts");
-console.log(posts);
+let posts = await getCollection("blog-posts");
+posts = posts.filter((p) => !p.data.draft);
 ---
 
 <IndexSection>
@@ -29,6 +29,8 @@ console.log(posts);
           All posts <i class="fa-solid fa-arrow-right ml-1" />
         </a>
       </>
-    ) : null
+    ) : (
+      <h2>It seems to be quite empty here.</h2>
+    )
   }
 </IndexSection>

@@ -6,6 +6,7 @@ const blogCollection = defineCollection({
     title: z.string(),
     readTime: z.string(),
     date: z.string(),
+    draft: z.boolean(),
   }),
 });
 
