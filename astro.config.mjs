@@ -9,5 +9,7 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   integrations: [tailwind(), svelte(), mdx()],
   output: "server",
-  adapter: vercel()
+  adapter: vercel({
+    analytics: true,
+  })
 });
