@@ -1,11 +1,18 @@
+---
+const { title, readTime, date, href } = Astro.props;
+---
+
 <div class="flex justify-between items-center mt-1.5 sm:mt-3">
   <div class="flex items-center">
     <a
-      class="font-bold text-base sm:text-xl hover:border-b-cool-500 border-b-2 border-b-cool-600 transition-all"
-      >Random blog title</a
+      href={href}
+      class="font-bold text-base sm:text-xl hover:border-b-cool-500 border-b-2 border-b-cool-600 transition-all truncate max-w-[176px] sm:max-w-[256px]"
+      >{title}</a
     >
     <span class="mx-2 text-[6px] text-blaze-300">●</span>
-    <span class="text-cool-300 text-[11px] sm:text-sm text-light">25 min</span>
+    <span class="text-cool-300 text-[11px] sm:text-sm text-light"
+      >{readTime}</span
+    >
   </div>
-  <span class="text-gray-400 sm:text-base text-xs">Jun 23, 2023</span>
+  <span class="text-gray-400 sm:text-base text-xs">{date}</span>
 </div>
