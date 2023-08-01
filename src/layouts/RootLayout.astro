@@ -18,14 +18,22 @@ const { title } = Astro.props;
     <Navbar />
     <slot />
     <footer
-      class="w-[335px] sm:w-[530px] border-t border-t-gray-600 my-10 mx-auto pt-10"
+      class="w-[335px] sm:w-[530px] border-t border-t-gray-600 my-10 mx-auto pt-10 flex justify-between text-cool-100"
     >
-      <h3 class="text-center text-cool-100">
+      <h3 class="text-center">
         <span class="text-blaze-400">&copy;</span>
         2022 - Present <span class="text-gray-200 font-bold"
           >Abhisheke Acharya</span
         >
       </h3>
+      <a
+        target="_blank"
+        href="http://github.com/abh1sheke/abh1sheke-dev"
+        class="flex items-center hover:text-gray-200 transition-colors"
+      >
+        <i class="fa-brands fa-github mr-2"></i>
+        source</a
+      >
     </footer>
   </body>
 </html>
