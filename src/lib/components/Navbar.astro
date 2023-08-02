@@ -4,49 +4,49 @@ const currentPath = Astro.url.pathname;
 ---
 
 <header
-    id="header"
-    data-state="hide"
-    class="w-full h-14 fixed z-10 p-3 flex justify-between items-center backdrop-blur-md transition-colors duration-250 delay-100"
+  id="header"
+  data-state="hide"
+  class="w-full h-14 fixed z-10 p-3 flex justify-between items-center backdrop-blur-md transition-colors duration-250 delay-100"
 >
-    <div></div>
-    <ul class="flex items-center data-[show=true]:opacity-1">
-        {currentPath !== "/" ? <Navlink href="/">home</Navlink> : null}
-        {currentPath !== "/blog" ? <Navlink href="/blog">blog</Navlink> : null}
-        <Navlink href="/#trinkets">trinkets</Navlink>
-        <Navlink href="http://github.com/abh1sheke" target="__blank">
-            <i class="fa-brands fa-github"></i>
-        </Navlink>
-        <Navlink href="http://twitter.com/abh1sheke" target="__blank">
-            <i class="fa-brands fa-twitter"></i>
-        </Navlink>
-        <Navlink href="http://instagram.com/abh1sheke" target="__blank">
-            <i class="fa-brands fa-instagram"></i>
-        </Navlink>
-    </ul>
+  <div></div>
+  <ul class="flex items-center data-[show=true]:opacity-1">
+    {currentPath !== "/" ? <Navlink href="/">home</Navlink> : null}
+    {currentPath !== "/blog" ? <Navlink href="/blog">blog</Navlink> : null}
+    <Navlink href="/#trinkets">trinkets</Navlink>
+    <Navlink href="http://github.com/abh1sheke" target="__blank">
+      <i class="fa-brands fa-github"></i>
+    </Navlink>
+    <Navlink href="http://twitter.com/abh1sheke" target="__blank">
+      <i class="fa-brands fa-twitter"></i>
+    </Navlink>
+    <Navlink href="http://instagram.com/abh1sheke" target="__blank">
+      <i class="fa-brands fa-instagram"></i>
+    </Navlink>
+  </ul>
 </header>
 
 <style>
-    header[data-state="show"] {
-        @apply bg-dark-900/50 shadow-md;
-    }
-    header[data-state="hide"] {
-        @apply bg-dark-900/0;
-    }
+  header[data-state="show"] {
+    @apply bg-dark-900/50 shadow-md;
+  }
+  header[data-state="hide"] {
+    @apply bg-dark-900/0;
+  }
 </style>
 
-<script lang="ts">
-    let navbar = document.getElementById("header");
-    document.addEventListener("scroll", (_) => {
-        let scrollOffset = window.scrollY > 0;
-        switch (scrollOffset) {
-            case true: {
-                navbar.dataset.state = "show";
-                break;
-            }
-            case false: {
-                navbar.dataset.state = "hide";
-                break;
-            }
-        }
-    });
+<script>
+  let navbar = document.getElementById("header");
+  document.addEventListener("scroll", (_) => {
+    let scrollOffset = window.scrollY > 0;
+    switch (scrollOffset) {
+      case true: {
+        navbar.dataset.state = "show";
+        break;
+      }
+      case false: {
+        navbar.dataset.state = "hide";
+        break;
+      }
+    }
+  });
 </script>
