@@ -35,9 +35,9 @@ const host = Astro.url.origin;
     <Navbar />
     <slot />
     <footer
-      class="w-[335px] sm:w-[530px] border-t border-t-gray-600 my-10 mx-auto pt-10 flex justify-between text-cool-100"
+      class="w-[335px] sm:w-[530px] border-t border-t-gray-600 my-10 mx-auto pt-4 sm:pt-10 flex sm:flex-row flex-col sm:justify-between justify-center items-center text-cool-100"
     >
-      <h3 class="text-center">
+      <h3 class="text-center sm:text-base text-sm">
         <span class="text-blaze-400">&copy;</span>
         2022 - Present <span class="text-gray-200 font-bold"
           >Abhisheke Acharya</span
@@ -46,7 +46,7 @@ const host = Astro.url.origin;
       <a
         target="_blank"
         href="http://github.com/abh1sheke/abh1sheke-dev"
-        class="flex items-center hover:text-gray-200 transition-colors"
+        class="flex items-center hover:text-gray-200 transition-colors sm:text-base text-sm mt-2 sm:mt-0"
       >
         <i class="fa-brands fa-github mr-2"></i>
         source</a
