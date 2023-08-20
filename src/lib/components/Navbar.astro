@@ -1,5 +1,7 @@
 ---
 import Navlink from "./Navlink.astro";
+import { Icon } from "astro-icon";
+
 const currentPath = Astro.url.pathname;
 ---
 
@@ -14,24 +16,37 @@ const currentPath = Astro.url.pathname;
     {currentPath !== "/blog" ? <Navlink href="/blog">blog</Navlink> : null}
     <Navlink href="/#trinkets">trinkets</Navlink>
     <Navlink href="http://github.com/abh1sheke" target="__blank">
-      <i class="fa-brands fa-github"></i>
+      <Icon name="bi:github" />
     </Navlink>
     <Navlink href="http://twitter.com/abh1sheke" target="__blank">
-      <i class="fa-brands fa-twitter"></i>
+      <svg
+        astro-icon="simple-icons:x"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        ><path
+          fill="currentColor"
+          d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584l-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+        ></path></svg
+      >
     </Navlink>
     <Navlink href="http://instagram.com/abh1sheke" target="__blank">
-      <i class="fa-brands fa-instagram"></i>
+      <Icon name="cib:instagram" />
     </Navlink>
   </ul>
 </header>
 
-<style>
+<style lang="postcss">
   header[data-state="show"] {
     @apply bg-dark-900/50 shadow-md;
   }
   header[data-state="hide"] {
     @apply bg-dark-900/0;
   }
+[astro-icon] {
+  @apply w-[14px] h-[14px];
+}
 </style>
 
 <script>
