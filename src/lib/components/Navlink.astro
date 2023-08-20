@@ -2,10 +2,8 @@
 const { href, target } = Astro.props;
 ---
 
-<li
-    class="text-dark-100 font-bold hover:text-gray-100 transition-colors"
->
-    <a href={href} class="mx-3" target={target}>
-        <slot />
-    </a>
+<li class="text-dark-100 font-bold hover:text-gray-100 transition-colors mx-3">
+  <a href={href} target={target}>
+    <slot />
+  </a>
 </li>

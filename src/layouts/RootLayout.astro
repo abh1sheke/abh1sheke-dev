@@ -1,5 +1,7 @@
 ---
 import Navbar from "../lib/components/Navbar.astro";
+import { Icon } from "astro-icon";
+
 const { title, description } = Astro.props;
 const host = Astro.url.origin;
 ---
@@ -25,10 +27,6 @@ const host = Astro.url.origin;
     <meta data-n-head="1" name="twitter:card" content="summary_large_image" />
     <meta data-n-head="1" name="twitter:creator" content="@abh1sheke" />
     <meta name="generator" content={Astro.generator} />
-    <script
-      async
-      src="https://kit.fontawesome.com/dc19eae1d2.js"
-      crossorigin="anonymous"></script>
     <title>{title || "Abhisheke Acharya"}</title>
   </head>
   <body class="min-h-screen bg-dark-800 antialiased">
@@ -48,9 +46,15 @@ const host = Astro.url.origin;
         href="http://github.com/abh1sheke/abh1sheke-dev"
         class="flex items-center hover:text-gray-200 transition-colors sm:text-base text-sm mt-2 sm:mt-0"
       >
-        <i class="fa-brands fa-github mr-2"></i>
+        <Icon name="bi:github" />
         source</a
       >
     </footer>
   </body>
 </html>
+
+<style lang="postcss">
+[astro-icon] {
+  @apply w-[14px] h-[14px] mr-2;
+}
+</style>
