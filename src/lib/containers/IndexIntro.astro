@@ -1,11 +1,14 @@
 ---
-import Greeting from "../components/Greeting/Greeting.svelte";
 import Parenthesised from "../components/Parenthesised.astro";
 import IndexSection from "../components/IndexSection.astro";
 ---
 
 <IndexSection>
-  <Greeting client:idle />
+  <h2
+    class="text-xl sm:text-3xl font-extrabold inline-block text-blaze-300 italic"
+  >
+    Hello there!
+  </h2>
   <h1 class="inline-block font-semibold">
     <span class="text-cool-400 text-xl sm:text-3xl">I&apos;m</span>
     <span class="text-3xl sm:text-5xl font-black ml-2 text-gray-100"
@@ -14,7 +17,7 @@ import IndexSection from "../components/IndexSection.astro";
   </h1>
   <div class="my-3 sm:mt-8 text-sm sm:text-lg">
     <p>
-      I'm a 20 year old independent Software Engineer currently based in
+      I'm a 21 year old independent Software Engineer currently based in
       Bengaluru, India. I enjoying creating
       <Parenthesised>and sometimes breaking</Parenthesised> software<span
         class="text-blaze-400">;</span
@@ -26,15 +29,6 @@ import IndexSection from "../components/IndexSection.astro";
         mediocre<span class="text-blaze-500 font-extrabold">*</span>
       </Parenthesised> blogs, listen to a ton of experimental music and read a bit
       of philosophy in my free time.
-    </p>
-    <p class="mt-4">
-      Currently, I am working on <a
-        href="http://github.com/abh1sheke/nsynk"
-        target="_blank"
-        class="border-b-2 border-b-cool-600 text-gray-200 font-extrabold"
-        >Nsynk</a
-      ><span class="text-blaze-500">;</span> a CLI application that helps you back
-      up your code to the cloud<span class="text-blaze-300">™️</span>.
     </p>
   </div>
 </IndexSection>
